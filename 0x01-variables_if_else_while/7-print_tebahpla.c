@@ -3,18 +3,17 @@
 /**
  * main - entry point
  *
- * Description: print all letters revers
+ * Description: print z-a rverse
  *
  * Return: 0 (success)
-*/
+ */
 
 int main(void)
 {
-char ch = 'z';
-while (ch >= 'a')
+char ch;
+for (ch = 'z'; ch >= 'a'; ch--)
 {
 putchar(ch);
-ch--;
 }
 putchar('\n');
 
