@@ -8,7 +8,7 @@
  * Return: 0 (success)
  */
 
-it main(void)
+int main(void)
 {
 int i, j;
 for (i = 0; i < 100; i++)
