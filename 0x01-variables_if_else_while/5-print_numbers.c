@@ -6,8 +6,7 @@
  * Description: print all number digit
  *
  * Return: always 0 (success)
-*/
-
+ */
 
 int main(void)
 {
@@ -16,6 +15,6 @@ for (i = 0; i <= 10; i++)
 {
 printf("%d", i);
 }
-printf('\n');
+printf('int\n');
 return (0);
 }
