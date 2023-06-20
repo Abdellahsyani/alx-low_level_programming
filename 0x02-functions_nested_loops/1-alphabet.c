@@ -1,9 +1,11 @@
-#include "main.h"
+#include"main.h"
+
 /**
- * main - entry point
+ * pritn_alphabet - maike the alphabet
  *
- * Return: always 0 (success)
- */
+ * Return: void
+*/
+
 void print_alphabet(void)
 {
 	int ch;
