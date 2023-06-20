@@ -1,11 +1,9 @@
 #include "main.h"
 
 /**
- * main - entry piont
- * Description: print_last_digit_int - prints the lats digit of a number
- * @parametre
- * Return: Value of the last digit of number
- *
+ * print_last_digit - prints the last digit of a number
+ * @n: the int to extract the last digit from
+ * Return: Value of the last digit
  */
 
 int print_last_digit(int n)
