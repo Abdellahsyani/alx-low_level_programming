@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * _isdigit - print  number
  * @c: number digit
