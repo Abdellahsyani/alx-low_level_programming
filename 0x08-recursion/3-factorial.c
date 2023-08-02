@@ -4,7 +4,7 @@
  * factorial - calculate the factorial of the gien number recurively
  * @n: The number whos factorial is calculated
  *
- * Retunr: error is -1, respective value of the factorial
+ * Return: factorial of n
  */
 
 int factorial(int n)
