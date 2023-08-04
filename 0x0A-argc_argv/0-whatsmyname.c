@@ -9,10 +9,8 @@
 
 int main(int argc, int *argv[])
 {
-	if (argv > 0)
-	{
-		char *rename = argv[0];
+	(void)argc;
+	printf("%s\n", argv[0]);
 
-		printf("%s\n", rename);
 	return (0);
 }
