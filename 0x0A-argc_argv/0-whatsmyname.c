@@ -10,7 +10,10 @@
 int main(int argc, int *argv[])
 {
 	(void)argc;
-	printf("%s\n", argv[0]);
-
+	if (argv > 0)
+	{
+		char *ar_name = argv[0];
+	printf("%s\n", ar_name);
+	}
 	return (0);
 }
