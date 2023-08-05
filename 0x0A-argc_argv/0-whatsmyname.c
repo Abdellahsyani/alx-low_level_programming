@@ -7,13 +7,11 @@
  * Return: always 0 success
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	(void)argc;
-	if (argv > 0)
-	{
-		char *ar_name = argv[0];
-	printf("%s\n", ar_name);
-	}
+
+	printf("%s\n", argv[0]);
+
 	return (0);
 }
