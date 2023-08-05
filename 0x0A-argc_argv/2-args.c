@@ -7,7 +7,7 @@
  * Return: Always 0 seccess
  */
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 {
 	int o;
 
