@@ -38,7 +38,8 @@ char *_strdup(char *str)
 	size = _strlen(str) + 1;
 
 	dup = malloc(sizeof(char) * size);
-	if (str == NULL)
+
+	if (dup == NULL)
 	{
 		return (NULL);
 	}
@@ -47,6 +48,7 @@ char *_strdup(char *str)
 	{
 		dup[i] = str[i];
 	}
+	free(dup);
 
 	return (dup);
 }
