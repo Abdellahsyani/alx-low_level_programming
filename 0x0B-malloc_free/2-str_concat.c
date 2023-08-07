@@ -7,7 +7,9 @@
  */
 int _strlen(char *str)
 {
-	int len1 = 0;
+	int len;
+
+	len = 0;
 
 	while (*str != '\0')
 	{
@@ -61,6 +63,8 @@ char *str_concat(char *s1, char *s2)
 		i++;
 		j++;
 	}
+
 	s3[size] = '\0';
+
 	return (s3);
 }
