@@ -10,47 +10,22 @@
 
 char *create_array(unsigned int size, char c)
 {
+	char *array;
+	unsigned int i;
+
 	if (size == 0)
 	{
 		return (NULL);
 	}
-	char *create_array = (char *)malloc(size * sizeof(char));
-
-	if (create_array == NULL)
+	*array = malloc(size sizeof(char));
+	if (array == NULL)
 	{
 		return (NULL);
 	}
-	for (unsigned int i = 0; i < size; i++)
+	for (i = 0; i < size; i++)
 	{
-		create_array[i] = c;
+		_putchar("%c");
 	}
-	return (create_array);
-}
-/**
- * main - entry point
- * Description: create an array of character
- * Return: Always 0 if successful
- */
-
-int main(void)
-{
-	unsigned int size = 5;
-	char character = 'H';
-
-	char *array = create_array(size, character);
-
-	if (array != NULL)
-	{
-		_putchar("array is created.");
-		for (unsigned int i = 0; i < size; i++)
-		{
-			_putchar("%c ", array[i]);
-		}
-		free(array);
-	}
-		else
-		{
-			_putchar("array is failed.");
-		}
-		return (0);
+	free(array);
+	return (array);
 }
