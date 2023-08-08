@@ -1,27 +1,8 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * _strlen - count the length of string
- * @str: the string
- * Return: len
- */
-int _strlen(char *str)
-{
-	int len;
-
-	len = 0;
-
-	while (*str != '\0')
-	{
-		str++;
-		len++;
-	}
-	return (len);
-}
-
-/**
- * str_concat - duplicate string to another string
+ * str_concat - print cancocanate
  * @s1: the first string
  * @s2: the seconde string
  * Return: Always 0 successful
@@ -29,43 +10,38 @@ int _strlen(char *str)
 
 char *str_concat(char *s1, char *s2)
 {
-	char *s3;
-	int i, j, size;
+char *conct;
+int i, ci;
 
-	i = 0;
-	j = 0;
-
-	if (s1 == NULL)
-	{
-		s1 = " ";
-	}
-	if (s2 == NULL)
-	{
-		s2 = " ";
-	}
-
-	size = _strlen(s1) + _strlen(s2) + 1;
-
-	s3 = malloc(sizeof(char) * size);
-
-	if (s3 == NULL)
-	{
-		return (NULL);
-	}
-
-	while (s1[i] != '\0')
-	{
-		s3[i] = s1[i];
-		i++;
-	}
-	while (s2[j] == '\0')
-	{
-		s3[i] = s2[j];
-		i++;
-		j++;
-	}
-
-	s3[size] = '\0';
-
-	return (s3);
+if (s1 == NULL)
+{
+s1 = "";
+}
+if (s2 == NULL)
+{
+s2 = "";
+}
+i = ci = 0;
+while (s1[i] != '\0')
+i++;
+while (s2[ci] != '\0')
+ci++;
+conct = malloc(sizeof(char) * (i + ci + 1));
+if (conct == NULL)
+{
+return (NULL);
+i = ci = 0;
+}
+while (s1[i] != '\0')
+{
+conct[i] = s1[i];
+i++;
+}
+while (s2[ci] != '\0')
+{
+conct[i] = s2[ci];
+i++, ci++;
+}
+conct[i] = '\0';
+return (conct);
 }
