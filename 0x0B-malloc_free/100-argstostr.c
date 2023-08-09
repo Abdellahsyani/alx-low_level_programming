@@ -2,24 +2,6 @@
 #include "main.h"
 
 /**
- * _strlen - count the size of  string
- * @str: string that sorted all string
- * Return: len
- */
-
-char _strlen(char *str)
-{
-	int len;
-
-	while (*str != '\0')
-	{
-		str++;
-		len++;
-	}
-	return (len);
-}
-
-/**
  * argstostr - function that concatenates all arguments
  * @ac: The size of argument
  * @av: The value of string
@@ -28,7 +10,7 @@ char _strlen(char *str)
 
 char *argstostr(int ac, char **av)
 {
-	int i, j, size;
+	int i, j, h = 0, k = 0;
 	char *arg;
 
 	if (ac == 0 || av == NULL)
@@ -36,21 +18,31 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 
-	size = _strlen(*av) + 1;
+	for (i = 0; i < ac; i++)
+	{
+		for (n = 0; av[i][j]; j++)
+			k++;
+	}
+	k += ac;
 
-	arg = malloc(sizeof(int) * (sizeof(char)));
+	arg = malloc(sizeof(char) * k + 1);
+
 	if (arg == NULL)
 	{
 		return (NULL);
-		free(arg);
 	}
+
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; j < i; j++)
+		for (j = 0; av[i][j]; j++)
 		{
-			arg[i];
+			arg[h] = av[i][k];
+			h++;
 		}
-		_putchar('\0');
+		if (arg[h] == '\0')
+		{
+			arg[h++] = '\n';
+		}
 	}
-	return (0);
+	return (arg);
 }
