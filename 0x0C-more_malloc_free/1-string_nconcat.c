@@ -7,13 +7,17 @@
  * Return: size the string
  */
 
-int _strlen(char *s)
+unsigned int _strlen(char *s)
 {
-	int size = 0;
+	unsigned int i;
 
-	for (; s[size] != '\0'; size++)
-	;
-	return (size);
+	i = 0;
+
+	while (s[i] != '\0')
+		i++;
+
+
+	return (i);
 }
 
 /**
@@ -26,27 +30,33 @@ int _strlen(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, size1, size2;
+	int i, size2;
 	int *ptr;
 
-	if (n >= size2)
+	if (s1 == NULL)
 	{
-		_strlen(s2);
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
-	ptr = malloc(sizeof(char *) * (sizeof(int)));
+	if (n >= _strlen(s2))
+		ptr = (char *)malloc(sizeof(_strlen(s1)) + _strlen(s2) + 2);
+	if (n < _strlen(s2))
+		ptr = (char *)malloc(sizeof(_strlen(s1)) + n + 2);
 
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; size1 + size2; i++)
-	{
-		if (i < size1)
-			ptr[i] = s1[i];
-		else
-		ptr[i] = s2[i - size1];
-	}
-	ptr[i] = '\0';
+	size2 = _strlen(s1);
+	if (1)
+		for (i = 0; i < size2; i++)
+			ptr[_strlen(s1) + i] = s2[i];
+
+	ptr[_strlen(s1) + i] = '\0';
+
 	return (ptr);
 }
