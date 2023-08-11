@@ -3,25 +3,6 @@
 #include "main.h"
 
 /**
- * _strlen - count the length of string
- * @s: the string
- * Return: size the string
- */
-
-unsigned int _strlen(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-
-	while (s[i] != '\0')
-		i++;
-
-
-	return (i);
-}
-
-/**
  * string_nconcat - concatonate the two string
  * @s1: the first string
  * @s2: the second string
@@ -31,7 +12,7 @@ unsigned int _strlen(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int i, size2;
+	int i, j, size1, size2;
 	char *ptr;
 
 	if (s1 == NULL)
@@ -43,21 +24,26 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 	}
 
-	if (n >= _strlen(s2))
-		ptr = (char *)malloc(sizeof(_strlen(s1)) + _strlen(s2) + 2);
-	if (n < _strlen(s2))
-		ptr = (char *)malloc(sizeof(_strlen(s1)) + n + 2);
-
+	for (size1 = 0; s1[size1] != '\0'; size1++)
+		;
+	for (size2 = 0; s2[size2] != '\0'; size2++)
+		;
+	ptr = malloc(size1 + n + 1);
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	size2 = _strlen(s1);
-	if (1)
-		for (i = 0; i < size2; i++)
-			ptr[_strlen(s1) + i] = s2[i];
 
-	ptr[_strlen(s1) + i] = '\0';
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		ptr[i] = s1[i];
+	}
+	for (j = 0; j < n; j++)
+	{
+		ptr[i] = s2[j];
+		i++;
+	}
+	ptr[i] = '\0'
 
 	return (ptr);
 }
