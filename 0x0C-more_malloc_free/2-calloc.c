@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
 #include "main.h"
 
@@ -19,8 +18,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	ptr = malloc(nmemb * size);
-	memset(ptr, 0, nmemb * size);
+	ptr = malloc(size * nmemb);
+
 	if (ptr == NULL)
 	{
 		return (NULL);
@@ -28,9 +27,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	char *bytptr = (unsigned char *)ptr;
 
-	for (unsigned int i = 0; i < nmemb * size; i++)
+	for (unsigned int i = 0; i < (nmemb * size); i++)
 	{
-		bytptr[i] = 0;
+		*((bytptr *)ptr + i) = 0;
 	}
 	return (ptr);
 }
