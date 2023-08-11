@@ -26,9 +26,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
+	unsigned char *bytptr = (unsigned char *)ptr;
+
 	for (i = 0; i < nmemb * size; i++)
 	{
-		ptr[i] = 0;
+		bytptr[i] = 0;
 	}
 	return (ptr);
 }
