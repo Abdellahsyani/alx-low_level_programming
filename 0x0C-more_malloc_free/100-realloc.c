@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
 
@@ -13,12 +12,15 @@
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	int *new_ptr;
+	int *cpy1;
+	int *cpy2;
 	int i;
 
 	if (ptr == NULL)
 	{
-		new_ptr = malloc(new_size);
-		return (new_ptr);
+		new_ptr = malloc(sizeof(int) * (new_size);
+		if (new_ptr == NULL)
+		return (NULL);
 	}
 
 	if (new_size == 0 || ptr != NULL)
@@ -27,16 +29,24 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	new_ptr = malloc(new_size);
-
-	unsigned int copy_size = old_size < new_size ? old_size : new_size;
-
-	unsigned char *cpy1 = (unsigned char *)ptr;
-	unsigned char *cpy2 = (unsigned char *)new_ptr;
-
-	for (i = 0; i < copy_size; i++)
+	if (new_size != old_size)
 	{
-		cpy2[i] = cpy1[i];
+	cpy1 = (int *)ptr;
+	new_ptr = malloc(sizeof(int *) * new_size);
+	if (new_size == NULL)
+	{
+	return (NULL);
+	cpy2 = (int *)new_ptr;
 	}
-	free(ptr);
+	if (new_size < old_size)
+		for (i = 0; i < new_size; i++)
+			cpy2[i] = cpy1[i];
+	if (new_size > old_size)
+		for (i = 0; i < old_size; i++)
+			cpy2[i] = cpy1[i];
+	}
+		if (new_size == old_size)
+			return (ptr);
+		free(ptr);
+		return (new_ptr);
 }
