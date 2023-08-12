@@ -14,11 +14,11 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	int *new_ptr;
 	int *cpy1;
 	int *cpy2;
-	int i;
+	unsigned int i, j;
 
 	if (ptr == NULL)
 	{
-		new_ptr = malloc(sizeof(int) * (new_size);
+		new_ptr = malloc(sizeof(int) * (new_size));
 		if (new_ptr == NULL)
 		return (NULL);
 	}
@@ -32,8 +32,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	if (new_size != old_size)
 	{
 	cpy1 = (int *)ptr;
-	new_ptr = malloc(sizeof(int *) * new_size);
-	if (new_size == NULL)
+	new_ptr = malloc(sizeof(int) * new_size);
+	if (new_size == 0)
 	{
 	return (NULL);
 	cpy2 = (int *)new_ptr;
@@ -42,11 +42,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		for (i = 0; i < new_size; i++)
 			cpy2[i] = cpy1[i];
 	if (new_size > old_size)
-		for (i = 0; i < old_size; i++)
-			cpy2[i] = cpy1[i];
+		for (j = 0; j < old_size; j++)
+			cpy2[j] = cpy1[j];
 	}
 		if (new_size == old_size)
+		{
 			return (ptr);
+		}
 		free(ptr);
 		return (new_ptr);
 }
