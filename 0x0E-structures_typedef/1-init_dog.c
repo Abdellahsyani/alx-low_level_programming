@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "dog.h"
 
 /**
  * struct dog - short description
@@ -26,11 +27,21 @@ struct dog
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog *d;
 
-	d->name = "Poppy";
-	d->age = 3.5;
-	d->owner = "Bob";
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
+}
 
-	printf("%s, %.1f, %s\n", d->name, d->age, d->owner);
+/**
+ * main - entry point
+ *
+ * Return: Always 0 success
+ */
+int main(void)
+{
+	struct dog d;
+
+	init_dog(&d, "Poppy", 3.5, "Bob");
+return (0);
 }
