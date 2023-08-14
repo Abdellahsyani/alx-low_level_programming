@@ -1,10 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
 
 /**
- * print_dog - prints a struct dog
- * @d: pointer that print struct dog
- * Return: No return value
+ * print_dog - prints the the struct
+ * @d: pointer that print the struct
  */
 
 void print_dog(struct dog *d)
@@ -13,28 +13,9 @@ void print_dog(struct dog *d)
 	{
 		return;
 	}
-	printf("%s\n", d->name);
-	printf("%.1f\n", d->age);
-	printf("%s\n", d->owner);
-
-	if (name == NULL)
-	{
-		return (nil);
-	}
-}
-
-/**
- * main - entry point
- * Description: long struct description
- * Return: Always 0 success
- */
-int main(void)
-{
-	struct dog d = {"Poppy", 3.5, "Bob"};
-
-	struct * Mydog = &d;
-
-	print_dog(Mydog);
-
-return (0);
+	if (d->name == NULL)
+		d->name = "(nil)";
+	if (d->owner == NULL)
+		d->owner = "(nil)";
+	printf("Name: %s\n, Age: %.1f\n, Owner: %s\n", d->name, d->age, d->owner);
 }
