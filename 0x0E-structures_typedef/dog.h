@@ -7,18 +7,18 @@ dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 
 /**
- * struct - dog define a new type
+ * struct dog - define a new type
  * @name: the first variable
  * @age: the seconde variable
  * @owner: the third variable
- * Return: dog
  */
 
-struct dog{
+struct dog
+{
 
-	name = char*;
-	age = float;
-	owner = char*;
+	char *name;
+	float age;
+	char *owner;
 };
 
 #endif /*DOG_H*/
