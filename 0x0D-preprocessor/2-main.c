@@ -7,10 +7,9 @@
  * Return: Always 0 success
  */
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	#define NAME main
+	printf("%s\n", argv[0]);
 
-	printf("%s\n", NAME);
 return (0);
 }
