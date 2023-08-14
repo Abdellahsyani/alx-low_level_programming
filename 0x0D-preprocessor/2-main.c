@@ -9,15 +9,8 @@
 
 int main(void)
 {
-	char *name;
+	#define NAME main
 
-	if (name == main)
-	{
-		printf("%s\n", name);
-	}
-	else
-	{
-		printf("\n");
-	}
+	printf("%s\n", NAME);
 return (0);
 }
