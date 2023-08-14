@@ -7,9 +7,9 @@
  * Return: Always 0 success
  */
 
-int main(int argc, char *argv[])
+int main(void)
 {
-	printf("%s\n", argv[0]);
+	printf("%s\n", _FILE_);
 
 return (0);
 }
