@@ -13,9 +13,9 @@ void print_all(const char * const format, ...)
 
 	while (all != NULL)
 	{
-	char character = va_arg(all, char);
+	char character = (char)va_arg(all, int);
 	int integer = va_arg(all, int);
-	float floa = va_arg(all, float);
+	float floa = (float)va_arg(all, double);
 	char *str = va_arg(all, char *);
 
 	if (str == NULL)
@@ -30,4 +30,5 @@ void print_all(const char * const format, ...)
 	}
 	printf("\n");
 	va_end(all);
+}
 
