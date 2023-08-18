@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 		if (i == ham - 1)
 		{
 			printf("%02hhx\n", arr[i]);
-			braek;
+			break;
 		}
 		printf("%02hhx ", arr[i]);
 	}
