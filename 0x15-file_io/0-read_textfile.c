@@ -1,17 +1,16 @@
 #include "main.h"
 
 /**
- * read_textfile - reads a text and prints the value
+ * read_textfile - reads a text file and prints the letters
  * @filename: filename.
  * @letters: numbers of letters printed.
  *
  * Return: numbers of letters printed. It fails, returns 0.
  */
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t Rd, Wr;
+	ssize_t nrd, nwr;
 	char *buf;
 
 	if (!filename)
@@ -26,11 +25,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 
-	Rd = read(fd, buf, letters);
-	Wr = write(STDOUT_FILENO, buf, Rd);
+	nrd = read(fd, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, nrd);
 
 	close(fd);
 
 	free(buf);
 
-	return (Wr);
+	return (nwr);
+}
