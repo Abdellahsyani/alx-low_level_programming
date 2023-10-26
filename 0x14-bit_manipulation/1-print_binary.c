@@ -8,18 +8,11 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int max = 1 << 31;
+	if (n > 1)
+		print_binary(n >> 1);
 
-	for (int i = 31; i >= 0; i--)
-	{
-		if ((n & max) != 0)
-		{
-			_putchar('1');
-		}
-		else
-		{
-			_putchar('0');
-		}
-		_putchar("\n");
-	}
+	if (n & 1)
+		_putchar('1');
+	else
+		_putchar('0');
 }
