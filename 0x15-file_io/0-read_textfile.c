@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * read_textfile - the function who read text from the file
@@ -10,23 +11,29 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t re;
-	ssize_t wr;
-	ssize_t truncat;
+	ssize_t o, r, w;
 	char *buff;
 
-	truncat = open(filename, O_RDONLY);
 
-	if (truncat == -1)
+	if (filename == -1)
 	{
 		return (0);
 	}
 	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
+		return (0);
 
-	re = read(truncat, buff, letters);
-	wr = write(STDOUT_FILENO, buff, re);
+	o = open(filename, O_RDONLY);
+	r = read(o, buff, letters);
+	w = write(STDOUT_FILENO, buff, r);
+
+	if (o == -1 || r == -1 || w == -1 || w != r)
+	{
+		free(buff);
+		return (0);
+	}
 
 	free(buff);
-	close(truncat);
-	return (wr);
+	close(o);
+	return (w);
 }
