@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """make made me engry"""
 
+
 def island_perimeter(grid):
     """Get the perimeter of the grid."""
     perimeter = 0
@@ -18,6 +19,7 @@ def island_perimeter(grid):
             except IndexError:
                 return island_perimeter(padding(grid))
     return perimeter
+
 
 def padding(grid):
     """adds a padding for a grid to ignore the IndexError"""
