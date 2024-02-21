@@ -10,14 +10,14 @@ def island_perimeter(grid):
                 continue
             try:
                 perimeter += 4 - (
-                        grid[row - 1][cell] +
-                        grid[row + 1][cell] +
-                        grid[row][cell - 1] +
-                        grid[row][cell + 1]
-                        )
+                    grid[row - 1][cell] +
+                    grid[row + 1][cell] +
+                    grid[row][cell - 1] +
+                    grid[row][cell + 1]
+                )
             except IndexError:
                 return island_perimeter(padding(grid))
-            return perimeter
+    return perimeter
 
 def padding(grid):
     """adds a padding for a grid to ignore the IndexError"""
