@@ -8,6 +8,7 @@
  *
  * Return: -1 if fails and value if success
  */
+
 int linear_search(int *array, size_t size, int value)
 {
 	size_t i;
