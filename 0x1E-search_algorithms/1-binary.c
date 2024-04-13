@@ -6,6 +6,7 @@
  * @size: the size of the array
  * @value: the value that we looking for
  *
+ *
  * Return: -1 if fail and value if success
  */
 
